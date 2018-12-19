@@ -18,7 +18,7 @@ class CreateNotesTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('content');
-            $table->unsignedInteger('creator')->index();
+            $table->unsignedInteger('creator')->index()->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

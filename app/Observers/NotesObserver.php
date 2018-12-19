@@ -14,6 +14,7 @@ class NotesObserver
      */
     public function creating(Note $note)
     {
+        if(empty(auth()->user())) return;
         $note->creator = $note->creator ?: auth()->user()->getKey();
     }
 

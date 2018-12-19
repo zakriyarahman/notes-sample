@@ -7,6 +7,5 @@ $factory->define(\App\Note::class, function (Faker $faker) {
         'name'       => $faker->name,
         'email'       => $faker->email,
         'content'       => $faker->sentence,
-        'creator'       => \App\User::first()->id,
     ];
 });

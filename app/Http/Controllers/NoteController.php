@@ -45,7 +45,7 @@ class NoteController extends Controller
         $view = $this->resource . __FUNCTION__;
 
         // Paginate the view
-        $notes = $this->note->with('createdBy')->paginate(10);
+        $notes = $this->note->with('createdBy')->orderByDesc('created_at')->paginate(10);
 
         // Render the view
         return view($view)->with(compact('notes'));

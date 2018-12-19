@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container">
+    <h4>Create a Note</h4><hr>
         {!! Form::open(['route'=>array('notes.store'),'class'=>'form-horizontal']) !!}
         @include('notes.form')
         <div class="form-group form-actions row">

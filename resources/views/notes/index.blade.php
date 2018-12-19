@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+    <h4>Notes List</h4><hr>
     <div class="text-right">
         <a href="{!! route('notes.create') !!}" class="btn btn-sm btn-default">
            <i class="fa fa-plus"></i>

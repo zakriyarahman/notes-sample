@@ -18,6 +18,10 @@ class ViewServiceProvider extends ServiceProvider
         View::composer(
             '*', 'App\Http\View\UserComposer'
         );
+        // Using class based composers...
+        View::composer(
+            ['notes.index','notes.newindex'], 'App\Http\View\NotesListComposer'
+        );
     }
 
     /**

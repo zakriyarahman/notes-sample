@@ -13,16 +13,16 @@
         <table class="table table-striped table-bordered" id="table">
             <thead>
                 <tr class="table-primary">
-                   <th>ID</th>
-                   <th>Name</th>
-                   <th>Email</th>
-                   <th>Content</th>
-                   <th>Creator</th>
-                   <th>Delete</th>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Content</th>
+                    <th>Creator</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($notes as $note)
+                @foreach ($notesList as $note)
                 <tr>
                     <td>{{ $note->id }}</td>
                     <td>{{ $note->name }}</td>
@@ -31,14 +31,14 @@
                     <td>{{ data_get($note, 'createdBy.name', 'N/A') }}</td>
                     <td>
                         {!! Form::open(['route'=>['notes.destroy', $note], 'method'=>'DELETE']) !!}
-                            <button class="btn btn-danger"> <i class="fa fa-trash" aria-hidden="true"></i></button>
+                            <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
                         {!! Form::close() !!}
                     </td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
-        {{ $notes->links() }}
+        {{ $notesList->links() }}
     </div>
 </div>
 @endsection

@@ -9,7 +9,7 @@
             <div class="card border border-primary">
                 <div class="card-header">Notes List</div>
                 <div class="card-body">
-                    <a href="{{ route('notes.create') }}" class="btn btn-success btn-sm d-flex flex-column " title="Add New Note">
+                    <a href="{{ route('notes.create') }}" class="btn btn-sm btn-success btn-sm d-flex flex-column " title="Add New Note">
                         <i class="fa fa-plus" aria-hidden="true"></i> Add New
                     </a>
                     <div class="table-striped">

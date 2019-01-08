@@ -2,43 +2,56 @@
 
 @section('content')
 <div class="container">
-    <h4>Notes List</h4><hr>
-    <div class="text-right">
-        <a href="{!! route('notes.create') !!}" class="btn btn-sm btn-default">
-           <i class="fa fa-plus"></i>
-           Add New Note
-        </a>
-    </div>
-    <div>
-        <table class="table table-striped table-bordered" id="table">
-            <thead>
-                <tr class="table-primary">
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Content</th>
-                    <th>Creator</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($notesList as $note)
-                <tr>
-                    <td>{{ $note->id }}</td>
-                    <td>{{ $note->name }}</td>
-                    <td>{{ $note->email }}</td>
-                    <td>{{ $note->content }}</td>
-                    <td>{{ data_get($note, 'createdBy.name', 'N/A') }}</td>
-                    <td>
-                        {!! Form::open(['route'=>['notes.destroy', $note], 'method'=>'DELETE']) !!}
-                            <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                        {!! Form::close() !!}
-                    </td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-        {{ $notesList->links() }}
+    <div class="row">
+        {{-- @include('admin.sidebar') --}}
+
+        <div class="col-md">
+            <div class="card border border-primary">
+                <div class="card-header">Notes List</div>
+                <div class="card-body">
+                    <div class="d-flex flex-row-reverse pb-2">
+                        <a href="{{ route('notes.create') }}" class="btn btn-sm btn-success" title="Add New Note">
+                            Add New<i class="fa fa-plus" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="table-striped">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Content</th>
+                                    <th>Creator</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($notesList as $note)
+                                <tr>
+                                    <td>{{ $note->id }}</td>
+                                    <td>{{ $note->name }}</td>
+                                    <td>{{ $note->email }}</td>
+                                    <td>{{ $note->content }}</td>
+                                    <td>{{ data_get($note, 'createdBy.name', 'N/A') }}</td>
+                                    <td>
+                                        {!! Form::open(['route'=>['notes.destroy', $note], 'method'=>'DELETE']) !!}
+                                        <button class="close" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        {!! Form::close() !!}
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="d-flex flex-row-reverse">
+                        {{ $notesList->links() }}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 @endsection

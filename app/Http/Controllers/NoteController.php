@@ -44,7 +44,7 @@ class NoteController extends Controller
         // Build the view
         $view = $this->resource . __FUNCTION__;
         // Render the view
-        return view('notes.newindex');
+        return view($view);
     }
 
     /**

@@ -15,7 +15,7 @@
                         </a>
                     </div>
                     <div class="table-striped">
-                        <table class="table">
+                        <table id="table_id" class="table datatable display">
                             <thead>
                                 <tr>
                                     <th>ID</th>

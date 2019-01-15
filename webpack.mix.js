@@ -2,7 +2,7 @@ const mix = require('laravel-mix');
 
 var nodePath = './node_modules/';
 var publicPath = './public/';
-var assetsPath = './resources/assets/';
+var resourcesPath = './resources/';
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -23,5 +23,6 @@ mix.sass('resources/sass/app.scss', 'public/css/styles.css')
     .scripts([
         nodePath+'datatables.net/js/jquery.dataTables.min.js',
         nodePath+'datatables.net-dt/js/dataTables.dataTables.min.js',
+        resourcesPath+'js/jquery/datatables/initiate.js'
     ],publicPath+'js/app.js')
     .version();

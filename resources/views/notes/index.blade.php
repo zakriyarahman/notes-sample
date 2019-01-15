@@ -1,7 +1,4 @@
 @extends('layouts.app')
-@section('styles')
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
-@endsection
 @section('content')
 <div class="container">
     <div class="row">
@@ -22,9 +19,8 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
-                                    <th>Email</th>
                                     <th>Content</th>
-                                    <th>Creator</th>
+                                    <th>Creation</th>
                                     <th>Delete</th>
                                 </tr>
                             </thead>
@@ -32,10 +28,31 @@
                                 @foreach ($notesList as $note)
                                 <tr>
                                     <td>{{ $note->id }}</td>
-                                    <td>{{ $note->name }}</td>
-                                    <td>{{ $note->email }}</td>
+                                    <td>
+                                        <div class=".flex-column">
+                                            <div>
+                                                {{ $note->name }}
+                                            </div>
+                                            <div>
+                                                <span class="small">
+                                                    {{ $note->email }}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td>{{ $note->content }}</td>
-                                    <td>{{ data_get($note, 'createdBy.name', 'N/A') }}</td>
+                                    <td>
+                                        <div class=".flex-column">
+                                            <div>
+                                                {{ data_get($note, 'createdBy.name', 'N/A') }}
+                                            </div>
+                                            <div>
+                                                <span class="small">
+                                                    {{ $note->created_at->format('m-d-y') }}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td>
                                         {!! Form::open(['route'=>['notes.destroy', $note], 'method'=>'DELETE']) !!}
                                         <button class="close" aria-label="Close">
@@ -56,11 +73,4 @@
         </div>
     </div>
 </div>
-@endsection
-@section('javascripts')
-    <script type="text/javascript">
-        $(document).ready( function () {
-            $('#datatable').DataTable();
-        } );
-    </script>
 @endsection

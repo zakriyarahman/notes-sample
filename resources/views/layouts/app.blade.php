@@ -9,6 +9,5 @@
             @yield('content')
         </main>
     </div>
-    @yield('javascripts')
 </body>
 </html>

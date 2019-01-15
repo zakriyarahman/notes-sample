@@ -21,7 +21,7 @@
                                     <th>Name</th>
                                     <th>Content</th>
                                     <th>Creation</th>
-                                    <th>Delete</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -54,11 +54,15 @@
                                         </div>
                                     </td>
                                     <td>
-                                        {!! Form::open(['route'=>['notes.destroy', $note], 'method'=>'DELETE']) !!}
-                                        <button class="close" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                        {!! Form::close() !!}
+                                        <div class="d-flex justify-content-around">
+                                            <div>
+                                                {!! Form::open(['route'=>['notes.destroy', $note], 'method'=>'DELETE']) !!}
+                                                <button class="close" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                {!! Form::close() !!}
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
                                 @endforeach

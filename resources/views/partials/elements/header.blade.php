@@ -8,6 +8,9 @@
     <title>{{ config('app.name') }}</title>
 
     <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
     <script src="{{ mix('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
@@ -20,4 +23,5 @@
         href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
         integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
         crossorigin="anonymous">
+    @yield('styles')
 </head>

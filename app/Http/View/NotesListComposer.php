@@ -42,6 +42,6 @@ class NotesListComposer
      */
     public function getData()
     {
-        return $this->note->with('createdBy')->orderByDesc('created_at')->paginate(10);
+        return $this->note->with('createdBy')->orderByDesc('created_at')->get();
     }
 }

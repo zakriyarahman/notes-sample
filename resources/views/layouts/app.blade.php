@@ -4,11 +4,11 @@
 <body>
     <div id="app">
         @include('partials.elements.navbar')
-
         <main class="py-4">
             @include('partials.elements.errors')
             @yield('content')
         </main>
     </div>
+    @yield('javascripts')
 </body>
 </html>

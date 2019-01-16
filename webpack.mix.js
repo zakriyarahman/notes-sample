@@ -14,7 +14,8 @@ var resourcesPath = './resources/';
  |
  */
 
-mix.sass('resources/sass/app.scss', 'public/css/styles.css')
+mix.copy(nodePath+'datatables.net-dt/images', publicPath+'images')
+    .sass('resources/sass/app.scss', 'public/css/styles.css')
     .combine([
         publicPath+'css/styles.css',
         nodePath+'datatables.net-dt/css/jquery.dataTables.min.css'

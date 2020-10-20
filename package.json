@@ -28,7 +28,7 @@
         "datatables.net": "^1.10.22",
         "lodash": "^4.17.20",
         "datatables.net-dt": "^1.10.22",
-        "sass": "^1.26.11",
+        "sass": "^1.27.0",
         "vue": "^2.6.12"
     }
 }

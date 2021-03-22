@@ -25,7 +25,7 @@
         "@babel/plugin-proposal-object-rest-spread": "^7.13.8",
         "@babel/plugin-transform-runtime": "^7.13.8",
         "@babel/preset-env": "^7.12.11",
-        "datatables.net": "^1.10.22",
+        "datatables.net": "^1.10.24",
         "lodash": "^4.17.21",
         "datatables.net-dt": "^1.10.22",
         "sass": "^1.32.8",

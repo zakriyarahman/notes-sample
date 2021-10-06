@@ -25,10 +25,10 @@
         "@babel/plugin-proposal-object-rest-spread": "^7.13.8",
         "@babel/plugin-transform-runtime": "^7.13.15",
         "@babel/preset-env": "^7.14.1",
-        "datatables.net": "^1.10.24",
+        "datatables.net": "^1.11.3",
         "lodash": "^4.17.21",
         "datatables.net-dt": "^1.10.24",
-        "sass": "^1.32.12",
+        "sass": "^1.42.1",
         "vue": "^2.6.12"
     }
 }

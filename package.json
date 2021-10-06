@@ -28,7 +28,7 @@
         "@babel/preset-env": "^7.15.6",
         "datatables.net": "^1.11.3",
         "lodash": "^4.17.21",
-        "datatables.net-dt": "^1.10.24",
+        "datatables.net-dt": "^1.11.3",
         "sass": "^1.42.1",
         "vue": "^2.6.14"
     }
